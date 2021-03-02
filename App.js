@@ -1,23 +1,24 @@
-import { StatusBar } from "expo-status-bar";
-import React, { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
-import { Provider, useSelector } from "react-redux";
-import Home from "./components/Home";
-import ProductList from "./components/ProductList";
-import ShopDetail from "./components/ShopDetail";
-import ShopList from "./components/ShopList";
+import React from "react";
+import { StyleSheet } from "react-native";
+import { Provider } from "react-redux";
+import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import store from "./store";
+import RootNavigator from "./components/Navigation";
+
+const MyTheme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    background: "rgba(255, 182, 193, 0.4)",
+  },
+};
 
 export default function App() {
   return (
     <Provider store={store}>
-      <View style={styles.container}>
-        {/* <Home /> */}
-        {/* <ShopList /> */}
-        {/* <ProductList /> */}
-        <ShopDetail />
-        <StatusBar style="auto" />
-      </View>
+      <NavigationContainer theme={MyTheme}>
+        <RootNavigator />
+      </NavigationContainer>
     </Provider>
   );
 }

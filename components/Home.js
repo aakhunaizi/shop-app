@@ -1,4 +1,5 @@
 import React from "react";
+import { Text } from "react-native";
 import {
   BottomStyling,
   ButtonStyled,
@@ -8,7 +9,7 @@ import {
   TopStyling,
 } from "../styles";
 
-const Home = () => {
+const Home = ({ navigation }) => {
   return (
     <HomeBackground
       style={{ flex: 1, width: "100%", height: "100%" }}
@@ -22,8 +23,11 @@ const Home = () => {
           <Title>Cookies & Beyond</Title>
         </TopStyling>
         <BottomStyling>
-          <ButtonStyled onPress={() => alert("No cookies for you :(")}>
-            Fetch Cookies 🍪
+          <ButtonStyled
+            title="Enter"
+            onPress={() => navigation.navigate("ShopList")}
+          >
+            <Text style={{ color: "white" }}>Enter</Text>
           </ButtonStyled>
         </BottomStyling>
       </OverLayContainer>

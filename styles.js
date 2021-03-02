@@ -1,3 +1,4 @@
+import { Button } from "native-base";
 import styled from "styled-components/native";
 
 export const ShopItemStyled = styled.Text`
@@ -29,9 +30,13 @@ export const BottomStyling = styled.View`
   justify-content: center;
 `;
 
-export const ButtonStyled = styled.Text`
-  font-size: 20px;
-  color: #fff;
+export const ButtonStyled = styled(Button)`
+  font-size: 30px;
+  background-color: rgb(255, 182, 193);
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
 `;
 
 export const HomeBackground = styled.ImageBackground`
@@ -42,7 +47,7 @@ export const HomeBackground = styled.ImageBackground`
 
 export const OverLayContainer = styled.View`
   flex: 1;
-  background-color: rgba(40, 60, 100, 0.4);
+  background-color: rgba(219, 112, 147, 0.2);
 `;
 
 export const TopStyling = styled.View`

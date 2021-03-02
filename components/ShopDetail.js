@@ -4,9 +4,9 @@ import { useSelector } from "react-redux";
 import { ShopDetailTitle, ShopDetailImage, ShopDetailWrapper } from "../styles";
 import ProductList from "./ProductList";
 
-const ShopDetail = () => {
+const ShopDetail = ({ navigation, route }) => {
   const loading = useSelector((state) => state.shops.loading);
-  const shop = useSelector((state) => state.shops.shops[1]);
+  const { shop } = route.params;
 
   const products = useSelector((state) => state.products.products);
 
