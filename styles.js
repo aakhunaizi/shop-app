@@ -17,11 +17,14 @@ export const ShopDetailWrapper = styled.View`
 export const ShopDetailImage = styled.Image`
   width: 150px;
   height: 150px;
+  border-radius: 100px;
+  margin: 0 auto;
 `;
 
 export const ShopDetailTitle = styled.Text`
   font-weight: bold;
   font-size: 40px;
+  margin: 0 auto;
 `;
 
 export const BottomStyling = styled.View`
