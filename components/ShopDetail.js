@@ -21,7 +21,7 @@ const ShopDetail = ({ navigation, route }) => {
       <ShopDetailWrapper>
         <ShopDetailImage source={{ uri: shop.image }} />
         <ShopDetailTitle>{shop.name}</ShopDetailTitle>
-        <ProductList products={shopProducts} />
+        <ProductList products={shopProducts} navigation={navigation} />
       </ShopDetailWrapper>
     </Content>
   );

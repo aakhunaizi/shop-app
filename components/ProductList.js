@@ -4,12 +4,12 @@ import { useSelector } from "react-redux";
 
 import ProductItem from "./ProductItem";
 
-const ProductList = ({ products }) => {
+const ProductList = ({ navigation, products }) => {
   const loading = useSelector((state) => state.products.loading);
   if (loading) return <Spinner color="pink" />;
-  //   const products = useSelector((state) => state.products.products);
+
   const productList = products.map((product) => (
-    <ProductItem product={product} key={product.id} />
+    <ProductItem product={product} key={product.id} navigation={navigation} />
   ));
   return <List>{productList}</List>;
 };

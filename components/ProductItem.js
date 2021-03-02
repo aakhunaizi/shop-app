@@ -3,9 +3,9 @@ import React from "react";
 import { Image, Text } from "react-native";
 import { ShopItemStyled } from "../styles";
 
-const ProductItem = ({ product }) => {
+const ProductItem = ({ navigation, product }) => {
   return (
-    <ListItem>
+    <ListItem onPress={() => navigation.navigate("ProductDetail", { product })}>
       <Image
         style={{ width: 100, height: 100 }}
         source={{ uri: product.image }}
