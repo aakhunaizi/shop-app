@@ -12,7 +12,7 @@ const ShopDetail = () => {
 
   if (loading) return <Spinner color="pink" />;
 
-  const allProducts = shop.products.map((product) =>
+  const shopProducts = shop.products.map((product) =>
     products.find((_product) => product.id === _product.id)
   );
 
@@ -21,7 +21,7 @@ const ShopDetail = () => {
       <ShopDetailWrapper>
         <ShopDetailImage source={{ uri: shop.image }} />
         <ShopDetailTitle>{shop.name}</ShopDetailTitle>
-        <ProductList products={allProducts} />
+        <ProductList products={shopProducts} />
       </ShopDetailWrapper>
     </Content>
   );

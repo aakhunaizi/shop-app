@@ -1,17 +1,33 @@
-import { Button } from "native-base";
 import React from "react";
-
-// Styling
-import { ImageBackground, Text, View } from "react-native";
+import {
+  BottomStyling,
+  ButtonStyled,
+  HomeBackground,
+  OverLayContainer,
+  Title,
+  TopStyling,
+} from "../styles";
 
 const Home = () => {
   return (
-    <View>
-      <Text>Cookies & Beyond</Text>
-      <Button onPress={() => alert("No cookies for you :(")}>
-        <Text style={{ color: "white" }}> Fetch Cookies 🍪 </Text>
-      </Button>
-    </View>
+    <HomeBackground
+      style={{ flex: 1, width: "100%", height: "100%" }}
+      source={{
+        uri:
+          "https://i.pinimg.com/736x/2e/86/93/2e869393eb92b8d2f368d827de7652be.jpg",
+      }}
+    >
+      <OverLayContainer>
+        <TopStyling>
+          <Title>Cookies & Beyond</Title>
+        </TopStyling>
+        <BottomStyling>
+          <ButtonStyled onPress={() => alert("No cookies for you :(")}>
+            Fetch Cookies 🍪
+          </ButtonStyled>
+        </BottomStyling>
+      </OverLayContainer>
+    </HomeBackground>
   );
 };
 
