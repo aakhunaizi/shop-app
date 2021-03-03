@@ -45,7 +45,7 @@ const ProductItem = ({ navigation, product }) => {
           style={{ backgroundColor: "#74c69d" }}
           onPress={handleAdd}
         >
-          <Text>Add</Text>
+          <Text style={{ color: "white" }}>+</Text>
         </Button>
       </Right>
     </ListItem>

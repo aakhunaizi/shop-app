@@ -7,6 +7,18 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
+    case types.CHECKOUT:
+      alert("Order has been placed 😎");
+      return {
+        ...state,
+        items: [],
+      };
+    case types.REMOVE_ITEM:
+      return {
+        ...state,
+        items: state.items.filter((item) => item.productId !== action.payload),
+      };
+
     case types.ADD_ITEM:
       const newItem = action.payload;
       const foundItem = state.items.find(

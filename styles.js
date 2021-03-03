@@ -78,10 +78,22 @@ export const CartButtonStyled = styled(Icon)`
   margin-right: 10px;
 `;
 
-export const AddStyled = styled(Button)`
+export const DeleteButtonStyled = styled(Icon)`
+  color: red;
+  margin-right: 10px;
   font-size: 30px;
-  background-color: rgb(255, 182, 193);
-  justify-content: center;
+`;
+
+export const CheckoutButton = styled.TouchableOpacity`
+  align-self: stretch;
   align-items: center;
-  width: 100%;
+  padding: 20px;
+  background-color: rgb(255, 182, 193);
+  margin-top: 30px;
+`;
+
+export const CheckoutButtonText = styled.Text`
+  color: #fcfdff;
+  font-weight: bold;
+  font-size: 18px;
 `;
