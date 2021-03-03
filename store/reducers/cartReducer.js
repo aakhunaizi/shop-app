@@ -1,25 +1,34 @@
 import * as types from "../actions/types";
 
 const initialState = {
-  items: [
-    {
-      productId: 8,
-      quantity: 10,
-    },
-    {
-      productId: 10,
-      quantity: 6,
-    },
-    {
-      productId: 24,
-      quantity: 8,
-    },
-  ],
+  items: [],
   loading: true,
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
+    case types.ADD_ITEM:
+      const newItem = action.payload;
+      const foundItem = state.items.find(
+        (item) => item.productId === newItem.productId
+      );
+      if (foundItem)
+        return {
+          ...state,
+          items: state.items.map((item) =>
+            item === foundItem
+              ? {
+                  ...foundItem,
+                  quantity: foundItem.quantity + newItem.quantity,
+                }
+              : item
+          ),
+        };
+      else
+        return {
+          ...state,
+          items: [...state.items, newItem],
+        };
     default:
       return state;
   }

@@ -8,4 +8,4 @@ export const FETCH_SHOPS = "FETCH_SHOPS";
 
 //Cart Types
 
-export const FETCH_CART = "FETCH_CART";
+export const ADD_ITEM = "ADD_ITEM";

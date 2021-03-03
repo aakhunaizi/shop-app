@@ -10,6 +10,14 @@ export const ShopItemStyled = styled.Text`
   width: 100%;
 `;
 
+export const ProductItemStyled = styled.Text`
+  color: black;
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+`;
+
 export const ShopDetailWrapper = styled.View`
   margin-top: 50px;
 `;
@@ -68,4 +76,12 @@ export const Title = styled.Text`
 export const CartButtonStyled = styled(Icon)`
   color: white;
   margin-right: 10px;
+`;
+
+export const AddStyled = styled(Button)`
+  font-size: 30px;
+  background-color: rgb(255, 182, 193);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 `;
