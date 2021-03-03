@@ -6,7 +6,10 @@ import { ShopItemStyled } from "../styles";
 const ShopItem = ({ shop, navigation }) => {
   return (
     <ListItem onPress={() => navigation.navigate("ShopDetail", { shop })}>
-      <Image style={{ width: 100, height: 100 }} source={{ uri: shop.image }} />
+      <Image
+        style={{ width: 100, height: 100, borderRadius: 50 }}
+        source={{ uri: shop.image }}
+      />
       <ShopItemStyled>{shop.name}</ShopItemStyled>
     </ListItem>
   );

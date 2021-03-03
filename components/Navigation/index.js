@@ -5,6 +5,8 @@ import Home from "../Home";
 import ShopList from "../ShopList";
 import ShopDetail from "../ShopDetail";
 import ProductDetail from "../ProductDetail";
+import CartList from "../CartList";
+import CartButton from "../buttons/CartButton";
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -28,6 +30,7 @@ const RootNavigator = () => {
         component={ShopList}
         options={{
           headerTitle: "Shops",
+          headerRight: () => <CartButton />,
         }}
       />
       <Screen
@@ -37,6 +40,7 @@ const RootNavigator = () => {
           const { shop } = route.params;
           return {
             title: shop.name,
+            headerRight: () => <CartButton />,
           };
         }}
       />
@@ -49,6 +53,11 @@ const RootNavigator = () => {
             title: product.name,
           };
         }}
+      />
+      <Screen
+        options={{ title: "Cart" }}
+        name="CartList"
+        component={CartList}
       />
     </Navigator>
   );

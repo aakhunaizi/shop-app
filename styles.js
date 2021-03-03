@@ -1,4 +1,4 @@
-import { Button } from "native-base";
+import { Button, Icon } from "native-base";
 import styled from "styled-components/native";
 
 export const ShopItemStyled = styled.Text`
@@ -63,4 +63,9 @@ export const Title = styled.Text`
   color: #fff;
   font-size: 38px;
   text-align: center;
+`;
+
+export const CartButtonStyled = styled(Icon)`
+  color: white;
+  margin-right: 10px;
 `;

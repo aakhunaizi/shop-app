@@ -1,18 +1,25 @@
 import * as types from "../actions/types";
 
 const initialState = {
-  shops: [],
+  items: [
+    {
+      productId: 8,
+      quantity: 10,
+    },
+    {
+      productId: 10,
+      quantity: 6,
+    },
+    {
+      productId: 24,
+      quantity: 8,
+    },
+  ],
   loading: true,
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case types.FETCH_SHOPS:
-      return {
-        ...state,
-        shops: action.payload.shops,
-        loading: false,
-      };
     default:
       return state;
   }

@@ -1,7 +1,6 @@
-import { Card, CardItem, Content, Spinner } from "native-base";
+import { Card, CardItem } from "native-base";
 import React from "react";
 import { Image, Text, View } from "react-native";
-import { ShopDetailTitle, ShopDetailImage, ShopDetailWrapper } from "../styles";
 
 const ProductDetail = ({ route }) => {
   const { product } = route.params;
