@@ -1,3 +1,4 @@
+import { Alert } from "react-native";
 import * as types from "../actions/types";
 
 const initialState = {
@@ -8,7 +9,12 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case types.CHECKOUT:
-      alert("Order has been placed 😎");
+      Alert.alert(
+        "Woohoo!",
+        "Your order has been placed 😎 ",
+        [{ text: "Ok" }],
+        { cancelable: false }
+      );
       return {
         ...state,
         items: [],

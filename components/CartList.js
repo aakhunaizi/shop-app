@@ -3,7 +3,7 @@ import React from "react";
 import { View, Spinner, List } from "native-base";
 import { useSelector } from "react-redux";
 import CartItem from "./CartItem";
-import { Text } from "react-native";
+import { Alert, Text } from "react-native";
 import { TopStyling, CheckoutButton, CheckoutButtonText } from "../styles";
 import { checkout } from "../store/actions/cartActions";
 import { useDispatch } from "react-redux";
@@ -12,7 +12,27 @@ const CartList = ({ navigation }) => {
   const items = useSelector((state) => state.cart.items);
   const products = useSelector((state) => state.products.products);
   const loading = useSelector((state) => state.products.loading);
+  const user = useSelector((state) => state.authentication.user);
+
   const dispatch = useDispatch();
+
+  const handlePress = () => {
+    if (user) dispatch(checkout());
+    else {
+      Alert.alert(
+        "Sign In",
+        "You must sign in to checkout ",
+        [
+          {
+            text: "Cancel",
+            style: "cancel",
+          },
+          { text: "Sign in", onPress: () => navigation.navigate("Signin") },
+        ],
+        { cancelable: false }
+      );
+    }
+  };
 
   if (loading) return <Spinner />;
 
@@ -38,7 +58,7 @@ const CartList = ({ navigation }) => {
   return (
     <View>
       <List>{cartList}</List>
-      <CheckoutButton onPress={() => dispatch(checkout())}>
+      <CheckoutButton onPress={handlePress}>
         <CheckoutButtonText>Checkout</CheckoutButtonText>
       </CheckoutButton>
     </View>
