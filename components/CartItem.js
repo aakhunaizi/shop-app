@@ -26,7 +26,7 @@ const CartItem = ({ product, quantity }) => {
           </Text>
           {"\n"}
           {"\n"}
-          <Text>{product.price * quantity} BD</Text>
+          <Text>{Math.round(product.price * quantity * 100) / 100} BD</Text>
         </ShopItemStyled>
       </Body>
       <Right>
